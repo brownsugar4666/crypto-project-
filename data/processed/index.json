@@ -1,0 +1,12 @@
+{
+  "splits": [
+    "train",
+    "val",
+    "test"
+  ],
+  "scaler": "scaler.joblib",
+  "family_map": "family_map.json",
+  "feature_cols": "feature_cols.json",
+  "n_features": 76,
+  "seed": 42
+}

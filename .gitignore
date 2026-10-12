@@ -1,0 +1,9 @@
+data/raw/
+data/processed/*.parquet
+*.pyc
+__pycache__/
+.DS_Store
+*.joblib
+*.pt
+*.model
+.env

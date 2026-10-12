@@ -1,0 +1,37 @@
+seed: 42
+seeds: [42, 123, 456, 789, 1024]
+
+dataset:
+  name: "CIC-IDS2017"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  keep_dest_port: false
+  subsample_benign: null  # set to e.g. 50000 for fast dev mode
+
+splits:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+
+scaler: "standard"  # standard or quantile
+
+label_mapping:
+  binary:
+    BENIGN: 0
+    attack: 1
+  families:
+    BENIGN: "Benign"
+    "DoS Hulk": "DoS"
+    "DoS GoldenEye": "DoS"
+    "DoS slowloris": "DoS"
+    "DoS Slowhttptest": "DoS"
+    DDoS: "DDoS"
+    PortScan: "PortScan"
+    Bot: "Bot"
+    "FTP-Patator": "BruteForce"
+    "SSH-Patator": "BruteForce"
+    "Web Attack – Brute Force": "WebAttack"
+    "Web Attack – XSS": "WebAttack"
+    "Web Attack – Sql Injection": "WebAttack"
+    Heartbleed: "Heartbleed"
+    Infiltration: "Infiltration"

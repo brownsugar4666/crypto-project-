@@ -1,0 +1,29 @@
+cnn_lstm:
+  conv_filters: [64, 128]
+  kernel_size: 3
+  lstm_hidden: 64
+  dense_hidden: 64
+  dropout: 0.3
+  pool_size: 2
+
+mlp:
+  hidden_layers: [256, 128, 64]
+  dropout: 0.3
+
+training:
+  lr: 0.001
+  batch_size: 1024
+  max_epochs: 50
+  patience: 5
+  optimizer: "adam"
+  loss: "weighted_ce"  # weighted_ce or focal
+  focal_gamma: 2.0
+  use_mixed_precision: true
+
+sweep:
+  filters: [[32, 64], [64, 128], [128, 256]]
+  lstm_units: [32, 64, 128]
+  dropout: [0.2, 0.3, 0.4]
+  batch_size: [512, 1024, 2048]
+  lr: [0.0005, 0.001, 0.005]
+  budget: 20  # max sweep runs
